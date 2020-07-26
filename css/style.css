@@ -1,0 +1,81 @@
+html {
+  cursor: none;
+}
+
+body {
+  background-color: rgb(137, 79, 196);
+  cursor: url('../img/hammer_1.png'), auto;
+}
+
+body:active {
+  cursor: url('../img/hammer_2.png'), auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header > h1 {
+  font-size: 60px;
+  font-family: 'Indie Flower', cursive;
+  color: #d8dee9;
+  text-align: center;
+}
+
+header > button {
+  background-color: transparent;
+  border: 2px solid #d8dee9;
+  padding: 10px 20px;
+  border-radius: 40%;
+  color: #d8dee9;
+  font-size: 20px;
+  font-family: 'Indie Flower';
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+header > button:hover {
+  transform: scale(1.1);
+}
+
+main {
+  width: 600px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.land {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.land::after {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 100px;
+  background: url(../img/land.png) bottom center no-repeat;
+  background-size: 110%;
+  position: absolute;
+  bottom: -50px;
+}
+
+.mouse {
+  width: 100%;
+  height: 100%;
+  background: url(../img/mouse.png) bottom center no-repeat;
+  background-size: 60%;
+  position: absolute;
+  top: 150px;
+  transition: top 0.3s;
+}
+
+.land.visible .mouse {
+  top: 25px;
+}
