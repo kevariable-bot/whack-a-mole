@@ -55,7 +55,7 @@ export default class WhackAMole {
 
     setTimeout(() => {
       this.break = true;
-    }, 10000);
+    }, 20000);
   }
 
   hold() {
